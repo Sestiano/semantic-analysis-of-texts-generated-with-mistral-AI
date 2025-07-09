@@ -1,0 +1,247 @@
+{
+  "analysis_parameters": {
+    "n_completions": 100,
+    "alpha": 0.05,
+    "fdr_alpha": 0.05,
+    "n_bootstrap": 1000,
+    "bootstrap_ci": 0.95,
+    "bootstrap_method": "percentile",
+    "semantic_models": [
+      "bertscore",
+      "fasttext",
+      "sentence_transformers"
+    ],
+    "bertscore_model": "distilbert-base-uncased",
+    "bertscore_lang": "en",
+    "bertscore_rescale": true,
+    "embedding_dim": 300,
+    "similarity_threshold": 0.3,
+    "similarity_thresholds": [
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.6,
+      0.7
+    ],
+    "topic_modeling": true,
+    "n_topics": 10,
+    "topic_coherence_models": [
+      "c_v",
+      "c_npmi",
+      "c_uci"
+    ],
+    "temperature_analysis": {
+      "min_pairs_per_temp": 1,
+      "temperature_bins": 5,
+      "correlation_methods": [
+        "pearson",
+        "spearman",
+        "kendall"
+      ]
+    },
+    "motif_analysis": true,
+    "community_detection": [
+      "louvain",
+      "leiden"
+    ],
+    "centrality_measures": [
+      "degree",
+      "betweenness",
+      "closeness",
+      "eigenvector",
+      "pagerank"
+    ],
+    "figsize": [
+      12,
+      8
+    ],
+    "style": "seaborn-v0_8",
+    "dpi": 300,
+    "effect_size_measures": [
+      "cohens_d",
+      "hedges_g",
+      "eta_squared"
+    ],
+    "permutation_tests": true,
+    "n_permutations": 10000,
+    "mixed_effects": true
+  },
+  "threshold_analysis": [
+    {
+      "threshold": 0.25,
+      "n_nodes": 14,
+      "n_edges": 91,
+      "density": 1.0,
+      "avg_clustering": 1.0,
+      "n_components": 1,
+      "largest_component_size": 14,
+      "avg_path_length_largest_cc": 1.0,
+      "avg_degree": 13.0,
+      "max_degree": 13,
+      "diameter": 1,
+      "radius": 1,
+      "average_shortest_path": 1.0
+    },
+    {
+      "threshold": 0.3,
+      "n_nodes": 14,
+      "n_edges": 91,
+      "density": 1.0,
+      "avg_clustering": 1.0,
+      "n_components": 1,
+      "largest_component_size": 14,
+      "avg_path_length_largest_cc": 1.0,
+      "avg_degree": 13.0,
+      "max_degree": 13,
+      "diameter": 1,
+      "radius": 1,
+      "average_shortest_path": 1.0
+    },
+    {
+      "threshold": 0.35,
+      "n_nodes": 14,
+      "n_edges": 91,
+      "density": 1.0,
+      "avg_clustering": 1.0,
+      "n_components": 1,
+      "largest_component_size": 14,
+      "avg_path_length_largest_cc": 1.0,
+      "avg_degree": 13.0,
+      "max_degree": 13,
+      "diameter": 1,
+      "radius": 1,
+      "average_shortest_path": 1.0
+    },
+    {
+      "threshold": 0.4,
+      "n_nodes": 14,
+      "n_edges": 91,
+      "density": 1.0,
+      "avg_clustering": 1.0,
+      "n_components": 1,
+      "largest_component_size": 14,
+      "avg_path_length_largest_cc": 1.0,
+      "avg_degree": 13.0,
+      "max_degree": 13,
+      "diameter": 1,
+      "radius": 1,
+      "average_shortest_path": 1.0
+    },
+    {
+      "threshold": 0.45,
+      "n_nodes": 14,
+      "n_edges": 91,
+      "density": 1.0,
+      "avg_clustering": 1.0,
+      "n_components": 1,
+      "largest_component_size": 14,
+      "avg_path_length_largest_cc": 1.0,
+      "avg_degree": 13.0,
+      "max_degree": 13,
+      "diameter": 1,
+      "radius": 1,
+      "average_shortest_path": 1.0
+    },
+    {
+      "threshold": 0.5,
+      "n_nodes": 14,
+      "n_edges": 91,
+      "density": 1.0,
+      "avg_clustering": 1.0,
+      "n_components": 1,
+      "largest_component_size": 14,
+      "avg_path_length_largest_cc": 1.0,
+      "avg_degree": 13.0,
+      "max_degree": 13,
+      "diameter": 1,
+      "radius": 1,
+      "average_shortest_path": 1.0
+    },
+    {
+      "threshold": 0.6,
+      "n_nodes": 14,
+      "n_edges": 91,
+      "density": 1.0,
+      "avg_clustering": 1.0,
+      "n_components": 1,
+      "largest_component_size": 14,
+      "avg_path_length_largest_cc": 1.0,
+      "avg_degree": 13.0,
+      "max_degree": 13,
+      "diameter": 1,
+      "radius": 1,
+      "average_shortest_path": 1.0
+    },
+    {
+      "threshold": 0.7,
+      "n_nodes": 14,
+      "n_edges": 91,
+      "density": 1.0,
+      "avg_clustering": 1.0,
+      "n_components": 1,
+      "largest_component_size": 14,
+      "avg_path_length_largest_cc": 1.0,
+      "avg_degree": 13.0,
+      "max_degree": 13,
+      "diameter": 1,
+      "radius": 1,
+      "average_shortest_path": 1.0
+    }
+  ],
+  "coherence_results": {
+    "same_prompt": {
+      "mean": {
+        "complex": 0.8645516832669576,
+        "vague": 0.8663125435511271
+      },
+      "std": {
+        "complex": 0.011658022295582817,
+        "vague": 0.010609437414391203
+      },
+      "count": {
+        "complex": 21,
+        "vague": 21
+      },
+      "median": {
+        "complex": 0.8613547682762146,
+        "vague": 0.8696097135543823
+      },
+      "min": {
+        "complex": 0.8469523787498474,
+        "vague": 0.8475485444068909
+      },
+      "max": {
+        "complex": 0.892120897769928,
+        "vague": 0.8806275725364685
+      }
+    },
+    "cross_prompt": {
+      "mean": 0.8253283050595498,
+      "std": 0.00529861454485848,
+      "count": 49.0,
+      "median": 0.8253391981124878,
+      "min": 0.8128661513328552,
+      "max": 0.8376801609992981
+    },
+    "temperature_correlations": {
+      "pearson": {
+        "correlation": 0.004733414375150994,
+        "p_value": 0.9644819909753456,
+        "significant": false
+      },
+      "spearman": {
+        "correlation": -0.00143178103339605,
+        "p_value": 0.9892532076377695,
+        "significant": false
+      },
+      "kendall": {
+        "correlation": 0.0,
+        "p_value": 1.0,
+        "significant": false
+      }
+    }
+  }
+}
