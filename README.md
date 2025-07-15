@@ -195,7 +195,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 This project originated from a hackathon collaboration with Roberto Passaro. The initial version can be found in the `backup_colab_first_version` folder. For Roberto's version of the project, visit his [GitHub profile](https://github.com/robertopassaro).
 
 ### Project History
-- **Initial Version**: Hackathon collaboration (June, 2025)
+- **Initial Version**: Hackathon collaboration (May, 2025)
 - **Current Version**: Enhanced research pipeline with advanced statistical methods (July, 2025)
 
 ## Contributing
