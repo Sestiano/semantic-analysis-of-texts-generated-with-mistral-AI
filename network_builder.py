@@ -27,18 +27,20 @@ class NetworkBuilder:
     
     def build_networks_from_texts(self, 
                                  texts_dir: str = "texts",
-                                 source_dirs: Optional[List[str]] = None) -> None:
+                                 source_dirs: Optional[List[str]] = None,
+                                 dir_prefix: str = "llm") -> None:
         """
         Build emotional networks from text files using EmoAtlas.
         
         Args:
             texts_dir: Base directory containing text files
             source_dirs: List of source directories to process
+            dir_prefix: Prefix for source directories (default: "llm")
         """
         if source_dirs is None:
             source_dirs = [
-                os.path.join(texts_dir, 'mistral_prompt_complex'),
-                os.path.join(texts_dir, 'mistral_prompt_vague')
+                os.path.join(texts_dir, f'{dir_prefix}_complex'),
+                os.path.join(texts_dir, f'{dir_prefix}_vague')
             ]
         
         # Count total files for progress bar

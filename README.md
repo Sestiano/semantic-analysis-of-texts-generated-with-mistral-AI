@@ -1,11 +1,11 @@
-# Semantic Analysis of Texts Generated with Mistral AI
+# Semantic Analysis of Texts Generated with Local LLMs (LM Studio)
 
 A comprehensive research pipeline for analyzing the semantic structure of AI-generated texts using advanced network analysis, transformer-based embeddings, and robust statistical methods.
 
 
 ## Overview
 
-This project investigates how generation parameters (temperature and prompt complexity) affect the semantic structure of texts produced by Mistral AI. The study employs state-of-the-art natural language processing techniques, including BERTScore for semantic similarity, bootstrap statistical inference, and network analysis to provide a rigorous examination of AI text generation patterns.
+This project investigates how generation parameters (temperature and prompt complexity) affect the semantic structure of texts produced by **local Language Models via LM Studio**. The study employs state-of-the-art natural language processing techniques, including BERTScore for semantic similarity, bootstrap statistical inference, and network analysis to provide a rigorous examination of AI text generation patterns.
 
 ## Key Features
 
@@ -32,15 +32,16 @@ This project investigates how generation parameters (temperature and prompt comp
 The project follows a modular design with centralized configuration:
 
 ### Core Modules
-- `mistral_generator.py`: Text generation with Mistral AI API
+- `llm_generator.py`: Text generation with LM Studio local API
 - `text_preprocessor.py`: SpaCy-based text cleaning and preprocessing
 - `network_builder.py`: EmoAtlas semantic network construction
 - `network_analyzer.py`: Comprehensive network metrics calculation
 - `statistical_tests.py`: Advanced statistical analysis and hypothesis testing
 - `visualizer.py`: High-quality visualization generation
+- `config.json`: Centralized configuration file
 
 ### Main Analysis Notebook
-- `Hakan4.ipynb`: Complete pipeline with centralized configuration
+- `semantic_analysis_pipeline.ipynb`: Complete pipeline with modular architecture
 
 ## Methodology
 
@@ -84,7 +85,7 @@ bert-score>=0.3.13
 sentence-transformers>=2.2.0
 gensim>=4.2.0
 emoatlas>=1.0.0
-mistralai>=0.1.0
+requests>=2.28.0
 ```
 
 ### Visualization
@@ -98,6 +99,60 @@ plotly>=5.10.0
 
 1. Clone the repository:
 ```bash
+git clone https://github.com/yourusername/semantic-analysis-of-texts-generated-with-mistral-AI.git
+cd semantic-analysis-of-texts-generated-with-mistral-AI
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+python -m spacy download en_core_web_lg
+```
+
+3. Configure the pipeline:
+```bash
+cp config.json.example config.json
+# Edit config.json with your settings
+```
+
+4. Start LM Studio and load your model
+
+## Usage
+
+### Quick Start
+
+Open `semantic_analysis_pipeline.ipynb` and run cells sequentially:
+
+1. **Configuration**: Load settings from `config.json`
+2. **Text Generation**: Generate texts via LM Studio
+3. **Preprocessing**: Clean texts with SpaCy
+4. **Network Construction**: Build semantic networks with EmoAtlas
+5. **Analysis**: Calculate network metrics and statistics
+6. **Visualization**: Create plots and figures
+
+### Configuration
+
+Edit `config.json` to customize:
+- LM Studio URL and model name
+- Temperature values and completion count
+- Prompts (complex and vague)
+- Directory structure
+- Analysis parameters
+
+Example `config.json`:
+```json
+{
+  "lm_studio": {
+    "url": "http://localhost:1234/v1/chat/completions",
+    "model_name": "local-model"
+  },
+  "generation": {
+    "temperatures": [0.001, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5],
+    "n_completions": 5,
+    "dir_prefix": "llm"
+  }
+}
+```
 git clone https://github.com/username/Semantic-Analysis-of-Texts-Generated-with-Mistral-AI.git
 cd Semantic-Analysis-of-Texts-Generated-with-Mistral-AI
 ```
@@ -108,16 +163,18 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_lg
 ```
 
-3. Configure Mistral API:
-   - Obtain API key from Mistral AI
-   - Set in notebook configuration section
+3. Setup LM Studio:
+   - Install LM Studio from https://lmstudio.ai/
+   - Load your preferred language model
+   - Start the API server (default: http://localhost:1234)
 
 ## Usage
 
 ### Quick Start
-1. Open `Hakan4.ipynb` in Jupyter Lab or VS Code
+1. Open `Hakan5.ipynb` in Jupyter Lab or VS Code
 2. Configure parameters in Section 2 (Configuration and Setup)
-3. Run cells sequentially for complete analysis
+3. Make sure LM Studio is running with a model loaded
+4. Run cells sequentially for complete analysis
 
 ### Configuration Options
 - Sample size: Adjust `n_completions` (default: 100)
@@ -176,11 +233,11 @@ This pipeline implements best practices for computational linguistics research:
 If you use this work in your research, please cite:
 
 ```bibtex
-@software{semantic_analysis_mistral_2025,
-  title={Semantic Analysis of Texts Generated with Mistral AI},
+@software{semantic_analysis_local_llm_2025,
+  title={Semantic Analysis of Texts Generated with Local LLMs (LM Studio)},
   author={[Author Names]},
   year={2025},
-  url={https://github.com/username/Semantic-Analysis-of-Texts-Generated-with-Mistral-AI}
+  url={https://github.com/Sestiano/semantic-analysis-of-texts-generated-with-mistral-AI}
 }
 ```
 

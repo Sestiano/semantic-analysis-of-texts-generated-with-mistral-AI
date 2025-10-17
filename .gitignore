@@ -1,0 +1,43 @@
+# Folder
+backup/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Generated data
+texts/
+results/
+figures/
+visualizations/
+bootstrap_results/
+semantic_analysis/
+*_results_*.json
+
+# Configuration (if contains sensitive data)
+config.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

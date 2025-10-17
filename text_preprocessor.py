@@ -63,21 +63,23 @@ class TextPreprocessor:
     
     def clean_and_export_files(self, 
                              texts_dir: str = "texts",
-                             source_patterns: Optional[List[str]] = None) -> None:
+                             source_patterns: Optional[List[str]] = None,
+                             dir_prefix: str = "llm") -> None:
         """
         Clean and export text files from specified directories.
         
         Args:
             texts_dir: Base directory containing text files
             source_patterns: List of glob patterns to match source files
+            dir_prefix: Prefix for source and cleaned directories (default: "llm")
         """
         if source_patterns is None:
-            source_patterns = ["mistral_prompt_*/*.txt"]
+            source_patterns = [f"{dir_prefix}_*/*.txt"]
         
         # Create cleaned directories directly in texts folder
         cleaned_dirs = {
-            "complex": os.path.join(texts_dir, "cleaned_mistral_complex"),
-            "vague": os.path.join(texts_dir, "cleaned_mistral_vague")
+            "complex": os.path.join(texts_dir, f"cleaned_{dir_prefix}_complex"),
+            "vague": os.path.join(texts_dir, f"cleaned_{dir_prefix}_vague")
         }
         
         # Create cleaned directories
@@ -116,9 +118,9 @@ class TextPreprocessor:
                     cleaned = self.clean_text(raw)
                     
                     # Determine output directory based on source
-                    if 'mistral_prompt_complex' in path:
+                    if 'complex' in path.lower():
                         out_dir = cleaned_dirs["complex"]
-                    elif 'mistral_prompt_vague' in path:
+                    elif 'vague' in path.lower():
                         out_dir = cleaned_dirs["vague"]
                     else:
                         pbar.update(1)
