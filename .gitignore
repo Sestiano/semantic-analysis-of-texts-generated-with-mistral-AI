@@ -12,6 +12,7 @@ dist/
 build/
 
 # Virtual Environment
+.venv-py311
 .venv/
 venv/
 ENV/
